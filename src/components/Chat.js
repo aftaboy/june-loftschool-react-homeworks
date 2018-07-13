@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Message from './Message';
+import './Chat/Chat.css';
 
 class Chat extends Component {
     constructor(props) {
@@ -26,14 +27,16 @@ class Chat extends Component {
                 messageInput: ''
             });
         }
-    }
+    }    
 
     render() {
 
         return (
             <div className="chat">
-                <div>
-                    {this.state.messages.map(a => <Message text={a.text} key={a.text} /> )}
+                <div className="message-list">
+                    <div className="messages">
+                        {this.state.messages.map(a => <Message text={a.text} key={a.text} /> )}
+                    </div>
                 </div>
                 <input 
                     className="input-message" 
